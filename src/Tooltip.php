@@ -54,10 +54,9 @@ class Tooltip extends Text
         return $this->withMeta(['allowHtml' => $allowHtml]);
     }
 
-    public function resolve($resource, $attribute = null)
+    public function resolve($resource, ?string $attribute = null): void
     {
         parent::resolve($resource, $attribute);
-        return $this->withMeta(['id' => "{$resource->id}-{$attribute}"]);
     }
 
     public function jsonSerialize(): array
